@@ -6,10 +6,11 @@ exports.handler = function (event, context, callback) {
 		SubscriptionArn: 'arn:aws:sns:us-east-1:480964559519:mockT1:arn:aws:sns:us-east-1:480964559519:mockT1:a17b5ada-c672-432b-bb1d-f384a3fe289b'
 	}).promise()
 		.then(data => {
-			// your code goes here
-		})
+			console.log(data);
+			callback(null,data);
+ 		})
 		.catch(err => {
-			// error handling goes here
+			console.log("error",err);
 		});
 
 	callback(null, 'Successfully executed');
